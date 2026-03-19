@@ -1,0 +1,14 @@
+5944f43 add Make File
+7d0edc9 Search Perfomance pdf added
+7853811 Search comparison graphs
+384d6ba created search queries
+84e3185 Aded SAPlaceNamesOptimal.txt
+c819df4 Added contains method and load with list
+5bcb2ad added binary tree node
+f7d8aa0 Added load (List<PlaceNameEntry> d, int n)
+8f5c629 final files
+72893b0 PlaceNameBST.class
+65eb6a8 PlaceNameArray.class
+9e2a2dc PlaceNameArray.java
+c0cdaad first commit
+094608b Intital commit
