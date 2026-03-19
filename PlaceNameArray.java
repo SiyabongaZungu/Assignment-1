@@ -53,6 +53,29 @@ public class PlaceNameArray {
       }
    }
    
+   public void load(List<PlaceNameEntry> input, int N) {
+       count = 0;
+       Arrays.fill(data, null);
+       for (PlaceNameEntry entry : input) {
+           if (count >= N)
+               break;
+           if (!contains(entry.getPlaceName())) {
+               data[count] = entry;
+               count++;
+           }
+       }
+   }
+   
+   public boolean contains(String placeName) {
+       for (int i = 0; i < count; i++) {
+           if (data[i].getPlaceName()
+                   .compareTo(placeName) == 0) {
+               return true;
+           }
+       }
+       return false;
+   }
+   
    public PlaceNameEntry search(String placeName)   {
    
       countComparison = 0;
