@@ -5,6 +5,7 @@ public class PlaceNameArray {
    public static int max_size = 100000;
    public int count = 0;
    public PlaceNameEntry[] placeNames;
+   public int countComparison = 0 ;
    
    public PlaceNameArray (int max_size) {
       placeNames = new PlaceNameEntry[max_size];
@@ -51,6 +52,24 @@ public class PlaceNameArray {
          System.out.println("File not found.");
       }
    }
+   
+   public PlaceNameEntry search(String placeName)   {
+   
+      countComparison = 0;
+      
+      for( int i = 0 ; i < count ; i++ ) {
+      
+         countComparison++;
+      
+         if(placeNames[i].getPlaceName().compareTo(placeName) == 0) {
+      
+            return placeNames[i];
+      
+         }
+      
+      }
+       return null; 
+   } 
 }
    
    
