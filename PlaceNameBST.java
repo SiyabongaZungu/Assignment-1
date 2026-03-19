@@ -4,6 +4,7 @@ import java.util.*;
 public class PlaceNameBST {
    public BinaryTreeNode<PlaceNameEntry> root;
    public int comparisonCounter;
+   int count = 0;
    
    public PlaceNameBST(PlaceNameEntry root, int comparisonCounter)   {
       root = null;
@@ -72,6 +73,41 @@ public class PlaceNameBST {
          System.out.println("File not found.");
             
       }
+   }
+   
+  public void load(List<PlaceNameEntry> input, int N) {
+       root = null;
+       count = 0;
+
+       for (PlaceNameEntry entry : input) {
+           if (count >= N)
+               break;
+           if (!contains(entry.getPlaceName())) {
+               root = insert(entry, root);
+               count++;
+           }
+       }
+   }   
+   
+   
+   public boolean contains(String placeName) {
+   
+       BinaryTreeNode<PlaceNameEntry> current = root;
+   
+       while (current != null) {
+   
+           int cmp = placeName.compareTo(
+                   current.data.getPlaceName());
+   
+           if (cmp == 0)
+               return true;
+           else if (cmp < 0)
+               current = current.left;
+           else
+               current = current.right;
+       }
+   
+       return false;
    }
    
    public PlaceNameEntry find(String placeName, BinaryTreeNode<PlaceNameEntry> node) {
