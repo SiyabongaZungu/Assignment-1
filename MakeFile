@@ -1,0 +1,14 @@
+# Java compiler
+JAVAC = javac
+
+JFLAGS = -Xlint
+
+SOURCES = *.java
+
+classes:
+	$(JAVAC) $JFLAGS) $<
+
+clean:
+	rm -f *.class
+
+.PHONY: classes clean
